@@ -19,8 +19,8 @@ class _SafaricomHomeState extends State<SafaricomHome> {
   final List<Widget> _pages = [
     const HomeScreen(),
     const TransactScreen(),
-    const GrowScreen(),
     const ServicesScreen(),
+    const GrowScreen(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -28,14 +28,11 @@ class _SafaricomHomeState extends State<SafaricomHome> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        leading: Container(
-          margin: const EdgeInsets.only(left: 8),
+        leading: const Padding(
+          padding: EdgeInsets.all(8.0),
           child: CircleAvatar(
-            child: ClipOval(
-              child: Image.network(
-                "https://www.google.com/url?sa=i&url=https%3A%2F%2Ftoppng.com%2Ffree-image%2Fninja-head-icon-ninja-vector-icon-PNG-free-PNG-Images_125970&psig=AOvVaw3RcIWYLlNWqqefz0pjP5PC&ust=1725902020826000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCIjLu5rss4gDFQAAAAAdAAAAABAE",
-                fit: BoxFit.cover,
-              ),
+            backgroundImage: NetworkImage(
+              "https://www.google.com/url?sa=i&url=https%3A%2F%2Ftoppng.com%2Ffree-image%2Fninja-head-icon-ninja-vector-icon-PNG-free-PNG-Images_125970&psig=AOvVaw3RcIWYLlNWqqefz0pjP5PC&ust=1725902020826000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCIjLu5rss4gDFQAAAAAdAAAAABAE",
             ),
           ),
         ),
@@ -44,33 +41,38 @@ class _SafaricomHomeState extends State<SafaricomHome> {
             onPressed: () {},
             icon: const FaIcon(
               FontAwesomeIcons.bell,
+              color: Colors.grey,
             ),
           ),
           IconButton(
             onPressed: () {},
             icon: const FaIcon(
               FontAwesomeIcons.clock,
+              color: Colors.grey,
             ),
           ),
           IconButton(
             onPressed: () {},
             icon: const FaIcon(
               FontAwesomeIcons.qrcode,
+              color: Colors.grey,
             ),
           ),
         ],
       ),
       body: _pages[_pageIndex],
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.white,
         selectedItemColor: Colors.green,
-        unselectedItemColor: Colors.white,
+        unselectedItemColor: Colors.grey,
         type: BottomNavigationBarType.fixed,
         currentIndex: _pageIndex,
         onTap: (index) {
-          setState(() {
-            _pageIndex = index;
-          });
+          setState(
+            () {
+              _pageIndex = index;
+            },
+          );
         },
         items: const [
           BottomNavigationBarItem(

@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:mpesa/pages/safaricom_home.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    const MyApp(),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -10,12 +12,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Mpesa Clone Demo',
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          //useMaterial3: true,
-          primarySwatch: Colors.blue,
-        ),
-        home: const SafaricomHome());
+      title: 'Mpesa Clone Demo',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        useMaterial3: true,
+        // primarySwatch: Colors.blue,
+      ),
+      home: const SafaricomHome(),
+    );
   }
 }
